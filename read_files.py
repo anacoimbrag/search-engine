@@ -3,7 +3,15 @@ import os
 
 from parser import Parser
 
-path = os.getcwd() + "/corpus/WTX001"
+path = os.getcwd() + "/corpus"
+
+articles = ["a", "the", "an"]
+pronouns = ["i", "you", "we", "it", "they", "he", "she", "my", "mine", "their", "theirs", "his",
+            "her", "that", "this", "us", "me", "him"]
+connectives = ["in", "s", "d", "t", "by", "of", "out", "and", "or", "to", "as", "for", "on", "as", "so",
+               "also", "though", "but", "not", "may", "who"]
+verbs = ["is", "are", "been", "have", "do", "does"]
+accents = [",", ".", "-","_", "\\", "~", "/", "{", "}", "[", "]"]
 
 
 def separate_docs(content):

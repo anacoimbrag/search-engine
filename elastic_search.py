@@ -8,7 +8,7 @@ pronouns = ["i", "you", "we", "it", "they", "he", "she", "my", "mine", "their", 
 connectives = ["in", "s", "d", "t", "by", "of", "out", "and", "or", "to", "as", "for", "on", "as", "so",
                "also", "though", "but", "not", "may", "who"]
 verbs = ["is", "are", "been", "have", "do", "does"]
-
+accents = [".", "-","_", "\\", "~", "/" ]
 es = Elasticsearch(['http://localhost:9200'])
 
 
@@ -86,6 +86,16 @@ def index(doc):
     json_doc = json.dumps(doc.__dict__)
     f = open("parser.json", "a")
     print(doc.id)
+    for word in articles:
+        json_doc = json_doc.replace(" " + word + " ", "")
+    for word in pronouns:
+        json_doc = json_doc.replace(" " + word + " ", "")
+    for word in connectives:
+        json_doc = json_doc.replace(" " + word + " ", "")
+    for word in verbs:
+        json_doc = json_doc.replace(" " + word + " ", "")
+    for word in accents:
+        json_doc = json_doc.replace(word, " ")
     f.write(json_doc + "\n")
     f.close()
 
