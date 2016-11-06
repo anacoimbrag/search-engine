@@ -86,16 +86,6 @@ def index(doc):
     json_doc = json.dumps(doc.__dict__)
     f = open("parser.json", "a")
     print(doc.id)
-    for word in articles:
-        json_doc = json_doc.replace(" " + word + " ", "")
-    for word in pronouns:
-        json_doc = json_doc.replace(" " + word + " ", "")
-    for word in connectives:
-        json_doc = json_doc.replace(" " + word + " ", "")
-    for word in verbs:
-        json_doc = json_doc.replace(" " + word + " ", "")
-    for word in accents:
-        json_doc = json_doc.replace(word, " ")
     f.write(json_doc + "\n")
     f.close()
 
