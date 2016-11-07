@@ -50,9 +50,9 @@ To evaluate your results copy and paste *results.search* and the trec correct se
 cd trec_eval.<version>
 ./trec_eval WT10g.qrels results.search
 ```
-this will return MAP, P@n and other metrics.
+this will return **MAP**, **P@n** and other metrics.
 
-if you want to know ndcg, just run 
+if you want to know **ndcg**, just run 
 ```bash
 ./trec_eval -m ndcg WT10g.qrels results.search
 ```
